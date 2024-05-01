@@ -1,0 +1,16 @@
+./gradlew bootBuildImage
+./gradlew bootRun
+
+===================DOCKER========================
+docker context use default
+docker images
+docker run --rm --name catalog-service -p 9001:9001 catalog-service-dev
+docker system prune -: remove all images, containers, volumes and networks that are
+                        dangling
+docker system prune -a -: remove any stopped containers and all unused images
+==================KUBERNETES==========================
+minikube start
+minikube image load catalog-service-dev
+kubectl config get-contexts
+kubectl config current-context
+kubectl config use-context polar
